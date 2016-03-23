@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: Msf::Payload::Apk::ApkBackdoor
+  
+    &mdash; Documentation by YARD 0.8.7.6
+  
+</title>
+
+  <link rel="stylesheet" href="../../../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../../../';
+  framesUrl = "../../../frames.html#!Msf/Payload/Apk/ApkBackdoor.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../../../_index.html">Index (A)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../../Msf.html" title="Msf (module)">Msf</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../Payload.html" title="Msf::Payload (class)">Payload</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Apk.html" title="Msf::Payload::Apk (module)">Apk</a></span></span>
+     &raquo; 
+    <span class="title">ApkBackdoor</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../../../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../../../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: Msf::Payload::Apk::ApkBackdoor
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Msf::Payload::Apk::ApkBackdoor</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+      <dt class="r2">Includes:</dt>
+      <dd class="r2"><span class='object_link'><a href="../Apk.html" title="Msf::Payload::Apk (module)">Msf::Payload::Apk</a></span></dd>
+      
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">lib/msf/core/payload/apk.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#backdoor_apk-instance_method" title="#backdoor_apk (instance method)">- (Object) <strong>backdoor_apk</strong>(apk, payload) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="../Apk.html" title="Msf::Payload::Apk (module)">Msf::Payload::Apk</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="../Apk.html#backdoor_payload-instance_method" title="Msf::Payload::Apk#backdoor_payload (method)">#backdoor_payload</a></span>, <span class='object_link'><a href="../Apk.html#find_launcher_activity-instance_method" title="Msf::Payload::Apk#find_launcher_activity (method)">#find_launcher_activity</a></span>, <span class='object_link'><a href="../Apk.html#fix_manifest-instance_method" title="Msf::Payload::Apk#fix_manifest (method)">#fix_manifest</a></span>, <span class='object_link'><a href="../Apk.html#print_error-instance_method" title="Msf::Payload::Apk#print_error (method)">#print_error</a></span>, <span class='object_link'><a href="../Apk.html#print_status-instance_method" title="Msf::Payload::Apk#print_status (method)">#print_status</a></span>, <span class='object_link'><a href="../Apk.html#run_cmd-instance_method" title="Msf::Payload::Apk#run_cmd (method)">#run_cmd</a></span>, <span class='object_link'><a href="../Apk.html#usage-instance_method" title="Msf::Payload::Apk#usage (method)">#usage</a></span></p>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="backdoor_apk-instance_method">
+  
+    - (<tt>Object</tt>) <strong>backdoor_apk</strong>(apk, payload) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+15
+16
+17</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/payload/apk.rb', line 15</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_backdoor_apk'>backdoor_apk</span><span class='lparen'>(</span><span class='id identifier rubyid_apk'>apk</span><span class='comma'>,</span> <span class='id identifier rubyid_payload'>payload</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_backdoor_payload'>backdoor_payload</span><span class='lparen'>(</span><span class='id identifier rubyid_apk'>apk</span><span class='comma'>,</span> <span class='id identifier rubyid_payload'>payload</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Tue Mar 22 22:36:25 2016 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.6 (ruby-2.1.8).
+</div>
+
+  </body>
+</html>

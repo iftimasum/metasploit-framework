@@ -73,9 +73,11 @@ class MetasploitModule < Msf::Post
       test_string = Rex::Text.rand_text_alpha(4)
       if session.platform.eql? 'windows'
         output = cmd_exec("cmd.exe", "/c echo '#{test_string}'")
+        vprint_status("output = |#{output}|")
         output == "'" + test_string + "'"
       else
         output = cmd_exec("echo '#{test_string}'")
+        vprint_status("output = |#{output}|")
         output == test_string
       end
     end
@@ -84,9 +86,11 @@ class MetasploitModule < Msf::Post
       test_string = Rex::Text.rand_text_alpha(4)
       if session.platform.eql? 'windows'
         output = cmd_exec("cmd.exe", "/c echo \"#{test_string}\"")
+        vprint_status("output = |#{output}|")
         output == "\"" + test_string + "\""
       else
         output = cmd_exec("echo \"#{test_string}\"")
+        vprint_status("output = |#{output}|")
         output == test_string
       end
     end

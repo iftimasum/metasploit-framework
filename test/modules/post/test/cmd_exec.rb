@@ -74,10 +74,12 @@ class MetasploitModule < Msf::Post
       if session.platform.eql? 'windows'
         output = cmd_exec("cmd.exe", "/c echo '#{test_string}'")
         vprint_status("output = |#{output}|")
+        vprint_status("test_string = |#{test_string}|")
         output == "'" + test_string + "'"
       else
         output = cmd_exec("echo '#{test_string}'")
         vprint_status("output = |#{output}|")
+        vprint_status("test_string = |#{test_string}|")
         output == test_string
       end
     end
@@ -87,10 +89,12 @@ class MetasploitModule < Msf::Post
       if session.platform.eql? 'windows'
         output = cmd_exec("cmd.exe", "/c echo \"#{test_string}\"")
         vprint_status("output = |#{output}|")
+        vprint_status("test_string = |#{test_string}|")
         output == "\"" + test_string + "\""
       else
         output = cmd_exec("echo \"#{test_string}\"")
         vprint_status("output = |#{output}|")
+        vprint_status("test_string = |#{test_string}|")
         output == test_string
       end
     end

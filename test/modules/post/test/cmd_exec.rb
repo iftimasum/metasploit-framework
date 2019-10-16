@@ -23,7 +23,7 @@ class MetasploitModule < Msf::Post
 
     it "should return the result of echo" do
       test_string = Rex::Text.rand_text_alpha(4)
-      if session.platform.eql? 'windows'
+      if session.platform.eql? 'windows' or session.platform.eql? 'win'
         output = cmd_exec('cmd.exe', "/c echo #{test_string}")
       else
         output = cmd_exec("echo #{test_string}")
@@ -32,7 +32,7 @@ class MetasploitModule < Msf::Post
     end
 
     # trying to do a sleep in windows without trashing stdout is hard
-    unless session.platform.eql? 'windows'
+    unless session.platform.eql? 'windows' or session.platform.eql? 'win'
       it "should return the result after sleeping" do
         test_string = Rex::Text.rand_text_alpha(4)
         output = cmd_exec("sleep 1; echo #{test_string}")
@@ -42,7 +42,7 @@ class MetasploitModule < Msf::Post
       it "should return the full response after sleeping" do
         test_string = Rex::Text.rand_text_alpha(4)
         test_string2 = Rex::Text.rand_text_alpha(4)
-        if session.platform.eql? 'windows'
+        if session.platform.eql? 'windows' or session.platform.eql? 'win'
           output = cmd_exec('cmd.exe', "/c echo #{test_string} & timeout 1 > null & echo #{test_string2}")
         else
           output = cmd_exec("echo #{test_string}; sleep 1; echo #{test_string2}")
@@ -54,7 +54,7 @@ class MetasploitModule < Msf::Post
     it "should return the result of echo 10 times" do
       10.times do
         test_string = Rex::Text.rand_text_alpha(4)
-        if session.platform.eql? 'windows'
+        if session.platform.eql? 'windows' or session.platform.eql? 'win'
           output = cmd_exec("cmd.exe", "/c echo #{test_string}")
         else
           output = cmd_exec("echo #{test_string}")
@@ -74,7 +74,7 @@ class MetasploitModule < Msf::Post
       if session.platform.eql? 'windows' and session.arch == ARCH_PYTHON
         output = cmd_exec("cmd.exe", "/c echo \"#{test_string}\"")
         output == test_string
-      elsif session.platform.eql? 'windows'
+      elsif session.platform.eql? 'windows' or session.platform.eql? 'win'
         output = cmd_exec("cmd.exe", "/c echo '#{test_string}'")
         output == "'" + test_string + "'"
       else
@@ -88,7 +88,7 @@ class MetasploitModule < Msf::Post
       if session.platform.eql? 'windows' and session.arch == ARCH_PYTHON
         output = cmd_exec("cmd.exe", "/c echo \"#{test_string}\"")
         output == test_string
-      elsif session.platform.eql? 'windows'
+      elsif session.platform.eql? 'windows' or session.platform.eql? 'win'
         output = cmd_exec("cmd.exe", "/c echo \"#{test_string}\"")
         output == "\"" + test_string + "\""
       else

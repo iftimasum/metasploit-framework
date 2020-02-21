@@ -133,7 +133,8 @@ module SingleCommandShell
     shell_write(cmd + "&echo #{token}\n")
     res = shell_read_until_token(token, 1, timeout)
     # I would like a better way to do this, but I don't know of one
-    res.reverse!.chomp!.reverse! # the presence of a leading newline is not consistent
+    # the presence of a leading newline is not consistent
+    res.reverse!.chomp!.reverse! unless res.nil?
     res
   end
 

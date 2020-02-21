@@ -134,7 +134,10 @@ module SingleCommandShell
     res = shell_read_until_token(token, 1, timeout)
     # I would like a better way to do this, but I don't know of one
     # the presence of a leading newline is not consistent
-    res.reverse!.chomp!.reverse! unless res.nil?
+    if re.nil?
+      raise RuntimeError, "Command response was nil."
+    else
+      res.reverse!.chomp!.reverse! unless res.nil?
     res
   end
 

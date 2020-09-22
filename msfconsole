@@ -157,12 +157,16 @@ begin
       "uds" => "UDS",
       "v1_0" => "V1_0",
       "php_include" => "PHPInclude",
-      "psexec_ms17_010" => "Psexec_MS17_010"
+      "psexec_ms17_010" => "Psexec_MS17_010",
+      "bind_tcp_rc4_x64" => "BindTcpRc4_x64",
+      "reverse_tcp_rc4_x64" => "ReverseTcpRc4_x64",
+      "reverse_https_x64" => "ReverseHttps_x64",
+      "bind_named_pipe_x64" => "BindNamedPipe_x64"
 
 
       )
   loader.setup # ready!
-  loader.eager_load
+  # loader.eager_load
 
   require 'metasploit/framework/profiler'
   require 'metasploit/framework/command/console'

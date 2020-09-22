@@ -1,6 +1,6 @@
 # -*- coding: binary -*-
-require 'msf/core'
-require 'msf/core/exploit/jsobfu'
+#require 'msf/core'
+#require 'msf/core/exploit/jsobfu'
 require 'json'
 
 module Msf::Payload::Firefox

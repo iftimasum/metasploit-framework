@@ -2,7 +2,7 @@
 require 'msf/base'
 
 module Msf
-module Sessions
+module Session
 
 ###
 #

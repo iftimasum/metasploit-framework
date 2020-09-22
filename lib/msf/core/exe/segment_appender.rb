@@ -1,9 +1,9 @@
 # -*- coding: binary -*-
 module Msf
-module Exe
+module EXE
 
   require 'metasm'
-  require 'msf/core/exe/segment_injector'
+  #require 'msf/core/exe/segment_injector'
 
   class SegmentAppender < SegmentInjector
 

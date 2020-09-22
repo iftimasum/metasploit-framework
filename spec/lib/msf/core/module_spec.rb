@@ -1,6 +1,6 @@
 # -*- coding:binary -*-
 require 'spec_helper'
-require 'msf/core/module'
+#require 'msf/core/module'
 
 RSpec.describe Msf::Module do
   subject(:msf_module) {

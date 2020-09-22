@@ -1,5 +1,5 @@
 require 'rex'
-require 'msf/core/module/reference'
+#require 'msf/core/module/reference'
 require 'msf/util/document_generator'
 require 'msf/util/document_generator/pull_request_finder'
 
@@ -191,7 +191,7 @@ RSpec.describe Msf::Util::DocumentGenerator::DocumentNormalizer do
   end
 
   describe 'normalize_demo_output' do
-    context 'when the module is a kind of Msf::Exploit::Remote::HttpServer' do
+    context 'when the module is a kind of Msf::Exploit::HTTP::HttpServer' do
       it 'returns the demo of HTTPSERVER_DEMO_TEMPLATE' do
         template = Msf::Util::DocumentGenerator::DocumentNormalizer::HTTPSERVER_DEMO_TEMPLATE
         expect(subject.send(:load_demo_template, msf_mod, template)).to include("use #{mod_fullname}")

@@ -3,14 +3,14 @@
 # Current source: https://github.com/rapid7/metasploit-framework
 ##
 
-require 'msf/core/handler/reverse_tcp'
-require 'msf/core/payload/osx/x64/reverse_tcp'
+#require 'msf/core/handler/reverse_tcp'
+#require 'msf/core/payload/osx/x64/reverse_tcp'
 
 module MetasploitModule
 
   CachedSize = 204
 
-  include Msf::Payload::Osx::ReverseTcp_x64
+  include Msf::Payload::OSX::ReverseTcp_x64
   include Msf::Payload::TransportConfig
   include Msf::Payload::Stager
 

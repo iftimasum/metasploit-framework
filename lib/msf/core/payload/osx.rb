@@ -1,5 +1,5 @@
 # -*- coding: binary -*-
-require 'msf/core'
+#require 'msf/core'
 
 ###
 #
@@ -8,7 +8,7 @@ require 'msf/core'
 # they want to support these features.
 #
 ###
-module Msf::Payload::Osx
+module Msf::Payload::OSX
 
   #
   # This mixin is chained within payloads that target the OSX platform.
@@ -54,7 +54,7 @@ module Msf::Payload::Osx
             false
           ]
         ),
-      ], Msf::Payload::Osx)
+      ], Msf::Payload::OSX)
 
     ret
   end

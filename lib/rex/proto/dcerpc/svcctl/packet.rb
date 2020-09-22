@@ -9,14 +9,14 @@ module Proto::DCERPC::SVCCTL
 
   require 'windows_error'
   require 'windows_error/win32'
-  require 'msf/core/exploit/windows_constants'
+  #require 'msf/core/exploit/windows_constants'
   NDR = Rex::Encoder::NDR
 
 
 class Client
 
   include WindowsError::Win32
-  include Msf::Exploit::Windows_Constants
+  include Msf::Exploit::WindowsConstants
 
   attr_accessor :dcerpc_client
 

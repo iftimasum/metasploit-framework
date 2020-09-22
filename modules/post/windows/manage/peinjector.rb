@@ -1,5 +1,5 @@
 require 'rex'
-require 'msf/core/post/common'
+#require 'msf/core/post/common'
 
 class MetasploitModule < Msf::Post
 

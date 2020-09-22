@@ -1,5 +1,5 @@
 # -*- coding: binary -*-
-require 'msf/core/plugin'
+#require 'msf/core/plugin'
 
 =begin
 require 'active_record'

@@ -1,6 +1,6 @@
 # -*- coding: binary -*-
 module Msf
-module Exe
+module EXE
 
   require 'metasm'
 

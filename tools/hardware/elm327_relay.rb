@@ -37,7 +37,7 @@ end
 $:.unshift(File.expand_path(File.join(File.dirname(msfbase), '..', '..', 'lib')))
 require 'msfenv'
 require 'rex'
-require 'msf/core'
+#require 'msf/core'
 require 'optparse'
 
 # Prints with [*] that represents the message is a status
@@ -61,7 +61,7 @@ module ELM327HWBridgeRelay
 
   class ELM327Relay < Msf::Auxiliary
 
-    include Msf::Exploit::Remote::HttpServer::HTML
+    include Msf::Exploit::HTTP::HttpServer::HTML
 
     # @!attribute serial_port
     #  @return [String] The serial port device name

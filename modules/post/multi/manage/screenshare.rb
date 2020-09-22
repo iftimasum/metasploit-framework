@@ -5,7 +5,7 @@
 
 class MetasploitModule < Msf::Post
 
-  include Msf::Exploit::Remote::HttpServer
+  include Msf::Exploit::HTTP::HttpServer
 
   def initialize(info = {})
     super(

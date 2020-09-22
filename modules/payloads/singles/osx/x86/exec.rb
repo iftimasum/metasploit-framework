@@ -17,7 +17,7 @@ module MetasploitModule
 
   include Msf::Payload::Single
   include Msf::Payload::Bsd::X86
-  include Msf::Payload::Osx
+  include Msf::Payload::OSX
 
   def initialize(info = {})
     super(merge_info(info,

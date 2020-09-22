@@ -1,5 +1,5 @@
 
-require 'msf/core'
+#require 'msf/core'
 require 'rex/post/meterpreter/extensions/stdapi/command_ids'
 require 'rex'
 

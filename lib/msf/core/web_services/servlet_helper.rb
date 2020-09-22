@@ -1,10 +1,10 @@
 require 'json'
-require 'msf/core/web_services/db_manager_proxy'
-require 'msf/core/web_services/job_processor'
+#require 'msf/core/web_services/db_manager_proxy'
+#require 'msf/core/web_services/job_processor'
 require 'metasploit/framework/data_service/remote/http/response_data_helper'
 require 'rex/ui/text/output/stdio'
 
-module ServletHelper
+module Msf::WebServices::ServletHelper
   include ResponseDataHelper
 
   @@console_printer = Rex::Ui::Text::Output::Stdio.new

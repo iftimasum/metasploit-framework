@@ -22,7 +22,7 @@ require 'zip'
 # Project
 #
 
-require 'msf/core'
+#require 'msf/core'
 
 # Top-level namespace that is shared between {Metasploit::Framework
 # metasploit-framework} and pro, which uses Metasploit::Pro.

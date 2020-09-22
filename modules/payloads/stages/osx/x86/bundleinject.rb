@@ -3,7 +3,7 @@
 # Current source: https://github.com/rapid7/metasploit-framework
 ##
 
-require 'msf/core/payload/osx/bundleinject'
+#require 'msf/core/payload/osx/bundleinject'
 
 ###
 #
@@ -12,6 +12,6 @@ require 'msf/core/payload/osx/bundleinject'
 ###
 module MetasploitModule
 
-  include Msf::Payload::Osx::BundleInject
+  include Msf::Payload::OSX::BundleInject
 
 end

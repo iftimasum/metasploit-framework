@@ -3,7 +3,7 @@
 # Current source: https://github.com/rapid7/metasploit-framework
 ##
 
-require 'msf/core/handler/reverse_tcp'
+#require 'msf/core/handler/reverse_tcp'
 require 'msf/base/sessions/command_shell'
 require 'msf/base/sessions/command_shell_options'
 
@@ -12,7 +12,7 @@ module MetasploitModule
   CachedSize = 152
 
   include Msf::Payload::Single
-  include Msf::Payload::Osx
+  include Msf::Payload::OSX
   include Msf::Sessions::CommandShellOptions
 
   def initialize(info = {})

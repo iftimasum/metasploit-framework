@@ -3,10 +3,10 @@
 # Current source: https://github.com/rapid7/metasploit-framework
 ##
 
-require 'msf/core/exploit/jsobfu'
+#require 'msf/core/exploit/jsobfu'
 
 class MetasploitModule < Msf::Auxiliary
-  include Msf::Exploit::Remote::HttpServer::HTML
+  include Msf::Exploit::HTTP::HttpServer::HTML
   include Msf::Exploit::JSObfu
 
   def initialize(info={})

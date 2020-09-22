@@ -4,7 +4,7 @@
 ##
 
 require 'json'
-require 'msf/core/payload/firefox'
+#require 'msf/core/payload/firefox'
 
 class MetasploitModule < Msf::Post
   include Msf::Payload::Firefox

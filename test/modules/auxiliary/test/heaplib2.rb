@@ -3,12 +3,12 @@
 # Current source: https://github.com/rapid7/metasploit-framework
 ##
 
-require 'msf/core'
+#require 'msf/core'
 
 class MetasploitModule < Msf::Auxiliary
   Rank = NormalRanking
 
-  include Msf::Exploit::Remote::HttpServer::HTML
+  include Msf::Exploit::HTTP::HttpServer::HTML
 
   def initialize(info={})
     super(update_info(info,

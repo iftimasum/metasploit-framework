@@ -10,7 +10,7 @@
 ###
 
 
-require 'msf/core'
+#require 'msf/core'
 require 'rex'
 
 module Msf

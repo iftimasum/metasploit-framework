@@ -4,7 +4,7 @@
 ##
 
 class MetasploitModule < Msf::Auxiliary
-  include Msf::Exploit::Remote::HTTP::Typo3
+  include Msf::Exploit::HTTP::Typo3
   include Msf::Auxiliary::Report
   include Msf::Auxiliary::AuthBrute
   include Msf::Auxiliary::Scanner

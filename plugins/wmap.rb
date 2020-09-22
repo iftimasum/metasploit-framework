@@ -4,7 +4,7 @@
 #
 
 require 'rabal/tree'
-require 'msf/core/rpc/v10/client'
+#require 'msf/core/rpc/v10/client'
 
 module Msf
 

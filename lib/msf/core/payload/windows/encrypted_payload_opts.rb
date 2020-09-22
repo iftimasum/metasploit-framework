@@ -1,4 +1,4 @@
-require 'msf/core'
+#require 'msf/core'
 require 'securerandom'
 
 module Msf

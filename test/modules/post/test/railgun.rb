@@ -1,5 +1,5 @@
 
-require 'msf/core'
+#require 'msf/core'
 
 lib = File.join(Msf::Config.install_root, "test", "lib")
 require 'module_test'

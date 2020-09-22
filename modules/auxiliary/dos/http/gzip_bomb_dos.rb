@@ -7,7 +7,7 @@ require 'zlib'
 require 'stringio'
 
 class MetasploitModule < Msf::Auxiliary
-  include Msf::Exploit::Remote::HttpServer::HTML
+  include Msf::Exploit::HTTP::HttpServer::HTML
 
   def initialize(info = {})
     super(update_info(info,

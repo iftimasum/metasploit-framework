@@ -15,7 +15,7 @@ MESSAGE = Rex::Proto::NTLM::Message
 
 class MetasploitModule < Msf::Auxiliary
   include Msf::Exploit::Remote::HttpClient
-  include Msf::Exploit::Remote::HttpServer::HTML
+  include Msf::Exploit::HTTP::HttpServer::HTML
   include Msf::Auxiliary::Report
 
   # Aliases for common classes

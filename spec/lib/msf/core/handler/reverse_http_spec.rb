@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'msf/core/handler/reverse_http'
+#require 'msf/core/handler/reverse_http'
 
 RSpec.describe Msf::Handler::ReverseHttp do
 

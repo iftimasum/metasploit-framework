@@ -12,7 +12,7 @@ require 'rex/exploitation/js/detect'
 require 'rex/exploitation/jsobfu'
 
 class MetasploitModule < Msf::Auxiliary
-  include Msf::Exploit::Remote::HttpServer::HTML
+  include Msf::Exploit::HTTP::HttpServer::HTML
 
   def initialize(info = {})
     super(update_info(info,
@@ -912,7 +912,7 @@ class MetasploitModule < Msf::Auxiliary
 
   # consider abstracting this out to a method (probably
   # with a different name) of Msf::Auxiliary::Report or
-  # Msf::Exploit::Remote::HttpServer
+  # Msf::Exploit::HTTP::HttpServer
   def record_detection(cli, request)
     os_name = nil
     os_flavor = nil

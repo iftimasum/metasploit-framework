@@ -6,8 +6,7 @@ module Msf
 # This class provides export capabilities
 #
 ##
-class DBManager
-class Export
+class DBExport
 
   attr_accessor :workspace
 
@@ -545,6 +544,5 @@ class Export
     extract_web_info(report_file, "web_vuln", @web_vulns)
   end
 
-end
 end
 end

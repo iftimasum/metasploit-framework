@@ -1,6 +1,6 @@
 # -*- coding: binary -*-
 module Msf
-module RPC
+module RPC::Constants
 
 API_VERSION = "1.0"
 

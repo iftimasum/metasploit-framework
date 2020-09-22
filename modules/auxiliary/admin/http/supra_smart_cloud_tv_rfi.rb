@@ -5,7 +5,7 @@
 
 class MetasploitModule < Msf::Auxiliary
   include Msf::Exploit::Remote::HttpClient
-  include Msf::Exploit::Remote::HttpServer
+  include Msf::Exploit::HTTP::HttpServer
 
   def initialize(info = {})
     super(update_info(info,

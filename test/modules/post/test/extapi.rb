@@ -1,5 +1,5 @@
 
-require 'msf/core'
+#require 'msf/core'
 require 'rex'
 
 lib = File.join(Msf::Config.install_root, "test", "lib")

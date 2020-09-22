@@ -1,5 +1,5 @@
 require 'rack'
-require 'msf/core/web_services/metasploit_api_app'
+#require 'msf/core/web_services/metasploit_api_app'
 require 'metasploit/framework/parsed_options/remote_db'
 require 'rex/ui/text/output/stdio'
 

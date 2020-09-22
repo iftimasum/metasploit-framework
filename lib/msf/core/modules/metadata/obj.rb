@@ -1,4 +1,4 @@
-require 'msf/core/modules/metadata'
+#require 'msf/core/modules/metadata'
 require 'json'
 
 #

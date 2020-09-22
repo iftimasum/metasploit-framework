@@ -8,7 +8,7 @@ class MetasploitModule < Msf::Auxiliary
   #
   # This module acts as an compromised webserver distributing PII Data
   #
-  include Msf::Exploit::Remote::HttpServer::HTML
+  include Msf::Exploit::HTTP::HttpServer::HTML
   include Msf::Auxiliary::PII
 
   def initialize(info = {})

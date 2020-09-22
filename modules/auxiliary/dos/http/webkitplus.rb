@@ -4,7 +4,7 @@
 ##
 
 class MetasploitModule < Msf::Auxiliary
-  include Msf::Exploit::Remote::HttpServer
+  include Msf::Exploit::HTTP::HttpServer
   include Msf::Auxiliary::Dos
 
   def initialize(info = {})

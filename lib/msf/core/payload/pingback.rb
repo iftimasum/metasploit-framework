@@ -1,7 +1,7 @@
 # -*- coding => binary -*-
 
-require 'msf/core'
-require 'msf/core/module/platform'
+#require 'msf/core'
+#require 'msf/core/module/platform'
 require 'rex/text'
 
 #

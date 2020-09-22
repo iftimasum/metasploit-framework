@@ -1,6 +1,6 @@
 class MetasploitModule < Msf::Post
   include Msf::Post::File
-  include Msf::Exploit::Remote::HttpServer
+  include Msf::Exploit::HTTP::HttpServer
   include Msf::Post::Windows::Powershell
 
   def initialize(info = {})

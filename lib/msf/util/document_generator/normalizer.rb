@@ -274,7 +274,7 @@ module Msf
         def normalize_demo_output(mod)
           if mod.kind_of?(Msf::Exploit::Remote::BrowserExploitServer) && mod.shortname != 'browser_autopwn2'
             load_demo_template(mod, BES_DEMO_TEMPLATE)
-          elsif mod.kind_of?(Msf::Exploit::Remote::HttpServer)
+          elsif mod.kind_of?(Msf::Exploit::HTTP::HttpServer)
             load_demo_template(mod, HTTPSERVER_DEMO_TEMPLATE)
           elsif mod.kind_of?(Msf::Exploit::Local)
             load_demo_template(mod, LOCALEXPLOIT_DEMO_TEMPLATE)

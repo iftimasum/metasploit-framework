@@ -1,5 +1,5 @@
-require 'msf/core/handler/bind_tcp'
-require 'msf/core/payload/python'
+#require 'msf/core/handler/bind_tcp'
+#require 'msf/core/payload/python'
 require 'msf/base/sessions/command_shell'
 require 'msf/base/sessions/command_shell_options'
 

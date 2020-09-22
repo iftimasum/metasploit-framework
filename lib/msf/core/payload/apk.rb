@@ -1,6 +1,6 @@
 # -*- coding: binary -*-
 
-require 'msf/core'
+#require 'msf/core'
 require 'rex/text'
 require 'tmpdir'
 require 'nokogiri'

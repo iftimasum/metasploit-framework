@@ -1,7 +1,7 @@
 require 'spec_helper'
 #require 'msf/core/exe/segment_injector'
 
-RSpec.describe Msf::Exe::SegmentInjector do
+RSpec.describe Msf::EXE::SegmentInjector do
 
   let(:opts) do
     option_hash = {
@@ -10,7 +10,7 @@ RSpec.describe Msf::Exe::SegmentInjector do
         :arch     => :x86
     }
   end
-  subject(:injector) { Msf::Exe::SegmentInjector.new(opts) }
+  subject(:injector) { Msf::EXE::SegmentInjector.new(opts) }
 
   it { is_expected.to respond_to :payload }
   it { is_expected.to respond_to :template }

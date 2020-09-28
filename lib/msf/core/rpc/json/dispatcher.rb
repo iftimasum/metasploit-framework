@@ -117,7 +117,7 @@ module Msf::RPC::JSON
         raise MethodNotFound.new(e.name, data: { method: e.name, message: e.message })
       rescue ArgumentError
         raise InvalidParams.new
-      rescue Msf::RPC::Exception => e
+      rescue Msf::RPC::Constants::Exception => e
         raise ApplicationServerError.new(e.message, data: { code: e.code })
       end
     end

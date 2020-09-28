@@ -72,7 +72,7 @@ module Msf::WebServices::ServletHelper
 
       exec_async = opts.delete(:exec_async)
       if (exec_async)
-        JobProcessor.instance.submit_job(opts, &job)
+        Msf::WebServices::JobProcessor.instance.submit_job(opts, &job)
         return set_empty_response
       else
         data = job.call(opts)
@@ -85,7 +85,7 @@ module Msf::WebServices::ServletHelper
   end
 
   def get_db
-    DBManagerProxy.instance.db
+    Msf::WebServices::DBManagerProxy.instance.db
   end
 
   # Sinatra injects extra parameters for some reason: https://github.com/sinatra/sinatra/issues/453

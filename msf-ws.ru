@@ -14,7 +14,8 @@ if ENV['MSF_LOCAL_LIB']
 end
 
 # Note: setup Rails environment before calling require
-require 'msf/core/web_services/metasploit_api_app'
+# require 'msf/core/web_services/metasploit_api_app'
 
 # run Msf::WebServices::JsonRpcApp
-run MetasploitApiApp
+
+run Msf::WebServices::MetasploitApiApp

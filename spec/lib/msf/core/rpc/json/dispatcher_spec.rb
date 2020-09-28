@@ -1,8 +1,8 @@
 require 'spec_helper'
 require 'json'
 
-#require 'msf/core/rpc'
-
+# require 'msf/core/rpc'
+require 'msf/core/rpc/v10/constants'
 RSpec.describe Msf::RPC::JSON::Dispatcher do
   include_context 'Msf::Simple::Framework'
 
@@ -256,9 +256,9 @@ RSpec.describe Msf::RPC::JSON::Dispatcher do
         error_code = 123
         error_msg = 'unit-test'
         cmd = instance_double('RpcCommand')
-        allow(cmd).to receive(:execute).with(instance_of(String), nil).and_raise(Msf::RPC::Exception.new(error_code, error_msg))
-        allow(cmd).to receive(:execute).with(instance_of(String), nil).and_raise(Msf::RPC::Exception.new(error_code, error_msg))
-        allow(cmd).to receive(:execute).with(instance_of(String), nil).and_raise(Msf::RPC::Exception.new(error_code, error_msg))
+        allow(cmd).to receive(:execute).with(instance_of(String), nil).and_raise(Msf::RPC::Constants::Exception.new(error_code, error_msg))
+        allow(cmd).to receive(:execute).with(instance_of(String), nil).and_raise(Msf::RPC::Constants::Exception.new(error_code, error_msg))
+        allow(cmd).to receive(:execute).with(instance_of(String), nil).and_raise(Msf::RPC::Constants::Exception.new(error_code, error_msg))
         @dispatcher.set_command(cmd)
 
         expected_response = {

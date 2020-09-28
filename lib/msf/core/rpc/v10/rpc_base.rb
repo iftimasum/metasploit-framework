@@ -23,7 +23,7 @@ class RPC_Base
   # @raise [Msf::RPC::Exception]
   # @return [void]
   def error(code, message)
-    raise Msf::RPC::Exception.new(code, message)
+    raise Msf::RPC::Constants::Exception.new(code, message)
   end
 end
 

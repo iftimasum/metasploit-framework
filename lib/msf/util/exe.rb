@@ -247,7 +247,7 @@ require 'digest/sha1'
 
     #try to inject code into executable by adding a section without affecting executable behavior
     if opts[:inject]
-      injector = Msf::Exe::SegmentInjector.new({
+      injector = Msf::EXE::SegmentInjector.new({
           :payload  => code,
           :template => opts[:template],
           :arch     => :x86,
@@ -269,7 +269,7 @@ require 'digest/sha1'
 
     # If the .text section is too small, append a new section instead
     if text.size < p_length
-      appender = Msf::Exe::SegmentAppender.new({
+      appender = Msf::EXE::SegmentAppender.new({
           :payload  => code,
           :template => opts[:template],
           :arch     => :x86,
@@ -603,7 +603,7 @@ require 'digest/sha1'
 
     # Try to inject code into executable by adding a section without affecting executable behavior
     if opts[:inject]
-      injector = Msf::Exe::SegmentInjector.new({
+      injector = Msf::EXE::SegmentInjector.new({
          :payload  => code,
          :template => opts[:template],
          :arch     => :x64,
@@ -613,7 +613,7 @@ require 'digest/sha1'
     end
 
     # Append a new section instead
-    appender = Msf::Exe::SegmentAppender.new({
+    appender = Msf::EXE::SegmentAppender.new({
       :payload  => code,
       :template => opts[:template],
       :arch     => :x64,

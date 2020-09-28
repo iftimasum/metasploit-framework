@@ -91,7 +91,7 @@ class Service
 
     begin
       res.body = process(req).to_msgpack
-    rescue Msf::RPC::Exception => e
+    rescue Msf::RPC::Constants::Exception => e
       elog('RPC Exception', error: e)
       res.body = process_exception(e).to_msgpack
       res.code = e.code
@@ -148,7 +148,7 @@ class Service
       if doauth
         token = msg.shift
         unless authenticate(token)
-          raise ::Msf::RPC::Exception.new(401, "Invalid Authentication Token")
+          raise ::Msf::RPC::Constants::Exception.new(401, "Invalid Authentication Token")
         end
       end
 

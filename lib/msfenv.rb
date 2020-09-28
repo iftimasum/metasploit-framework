@@ -1,4 +1,4 @@
-#
+require 'msf_autoload'
 # Use bundler to load dependencies
 #
 

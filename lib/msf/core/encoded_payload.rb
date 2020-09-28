@@ -537,7 +537,7 @@ protected
     return false if self.raw.empty?
 
     chars.each_byte do |bad|
-      return true if self.raw.index(bad.chr(Encoding::ASCII_8BIT))
+      return true if self.raw.index(bad.chr(::Encoding::ASCII_8BIT))
     end
 
     false

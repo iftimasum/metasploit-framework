@@ -29,7 +29,7 @@ require 'action_view/railtie'
 
 require 'metasploit/framework/common_engine'
 require 'metasploit/framework/database'
-
+require 'msf_autoload'
 module Metasploit
   module Framework
     class Application < Rails::Application

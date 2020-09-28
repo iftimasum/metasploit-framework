@@ -5,7 +5,7 @@ require 'singleton'
 require 'metasploit/framework/database'
 require 'rails'
 
-class DBManagerProxy
+class Msf::WebServices::DBManagerProxy
   include Singleton
 
   attr_reader :db

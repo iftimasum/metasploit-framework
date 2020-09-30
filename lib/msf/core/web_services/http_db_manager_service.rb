@@ -3,7 +3,7 @@ require 'rack'
 require 'metasploit/framework/parsed_options/remote_db'
 require 'rex/ui/text/output/stdio'
 
-class HttpDBManagerService
+class Msf::WebServices::HttpDBManagerService
 
   def start(opts)
     parsed_options = Metasploit::Framework::ParsedOptions::RemoteDB.new

@@ -144,7 +144,8 @@ loader.inflector.inflect(
     "reverse_https_x64" => "ReverseHttps_x64",
     "bind_named_pipe_x64" => "BindNamedPipe_x64",
     "db_manager_proxy" => "DBManagerProxy",
-    "wmap_scan_ssl" => "WmapScanSSL"
+    "wmap_scan_ssl" => "WmapScanSSL",
+    "http_db_manager_service" => "HttpDBManagerService"
 )
 loader.setup # ready!
 # loader.eager_load

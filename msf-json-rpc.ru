@@ -16,6 +16,6 @@ if ENV['MSF_LOCAL_LIB']
 end
 
 # Note: setup Rails environment before calling require
-require 'msf/core/web_services/json_rpc_app'
+#require 'msf/core/web_services/json_rpc_app'
 
 run Msf::WebServices::JsonRpcApp

@@ -37,7 +37,6 @@ module Msf::WebServices
       @@framework = nil
       # Create simplified instance of the framework
       app.set :framework, Proc.new {
-        require 'pry'; binding.pry
         @@framework ||=
             begin
               framework = Msf::Simple::Framework.create

@@ -25,7 +25,6 @@ RSpec.describe "Metasploit's json-rpc" do
   end
 
   before(:example) do
-    require 'pry'; binding.pry
     allow(framework.db).to receive(:active).and_return(false)
   end
 

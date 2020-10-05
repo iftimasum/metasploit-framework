@@ -1,4 +1,4 @@
-module ServiceServlet
+module Msf::WebServices::ServiceServlet
 
   def self.api_path
     '/api/v1/services'
